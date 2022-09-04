@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Products.css";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, getProduct } from "../../actions/productAction";
+import { clearErrors, getAdminProduct } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
 import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
@@ -41,7 +41,6 @@ const Products = ({ match }) => {
   } = useSelector((state) => state.products);
 
   const keyword = match.params.keyword;
-
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
   };
@@ -56,8 +55,7 @@ const Products = ({ match }) => {
       alert.error(error);
       dispatch(clearErrors());
     }
-
-    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    dispatch(getAdminProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
   return (
