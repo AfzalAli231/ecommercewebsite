@@ -1,6 +1,7 @@
 import React from "react";
-import { ReactNavbar } from "overlay-navbar";
+import {ReactNavbar} from "overlay-navbar";
 import logo from "../../../images/logo.png";
+import {MdAccountCircle} from "react-icons/md"
 
 const options = {
   burgerColorHover: "#eb4034",
@@ -25,6 +26,7 @@ const options = {
   nav4justifyContent: "flex-start",
   link1ColorHover: "#eb4034",
   link1Margin: "1vmax",
+  ProfileIconElement: MdAccountCircle,
   profileIconUrl: "/login",
   profileIconColor: "rgba(35, 35, 35,0.8)",
   searchIconColor: "rgba(35, 35, 35,0.8)",
